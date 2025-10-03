@@ -128,3 +128,8 @@ To pass group membership to Prism Central via SAML:
 4. Save the policy.
 
 ---
+
+### ⚠️ Notes & Known Issues
+When integrating Prism Central with Keycloak via SAML, you may encounter issues with logout:
+- **Logout Service POST Binding URL**  
+- **Logout Service Redirect Binding URL**  
