@@ -55,11 +55,17 @@ Before configuration, download the metadata from both Prism Central and Keycloak
 
 ---
 
-###
+## 4.3 Configure Logout Service URL
+1. Open the newly created **Client**.
+2. Go to the **Advanced** tab.
+3. In **Logout Service Redirect Binding URL**, enter:
+https://10.2.0.36:9440/api/iam/authn/callback
+
+4. Save the configuration.
 
 ---
 
-### 4.3 Create Groups
+### 4.4 Create Groups
 Create groups to differentiate user permissions:
 - `pc-admin-keycloak`
 - `pc-operator-keycloak`
@@ -68,7 +74,7 @@ These groups will later be mapped to Prism Central Authorization Policies.
 
 ---
 
-### 4.4 Create Users and Assign Groups
+### 4.5 Create Users and Assign Groups
 1. Go to **Users → Add User** and create the test or production users.
 2. Under the user’s **Groups** tab, add them to the appropriate group(s):
    - `pc-admin-keycloak`
@@ -76,7 +82,7 @@ These groups will later be mapped to Prism Central Authorization Policies.
 
 ---
 
-### 4.5 Add Group Mapper
+### 4.6 Add Group Mapper
 To pass group membership to Prism Central via SAML:
 
 1. Go to **Clients → [your SAML client]**
@@ -132,8 +138,3 @@ To pass group membership to Prism Central via SAML:
 4. Save the policy.
 
 ---
-
-### ⚠️ Notes & Known Issues
-When integrating Prism Central with Keycloak via SAML, you may encounter issues with logout:
-- **Logout Service POST Binding URL**  
-- **Logout Service Redirect Binding URL**  
