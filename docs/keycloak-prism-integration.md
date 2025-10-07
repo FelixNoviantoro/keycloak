@@ -55,6 +55,10 @@ Before configuration, download the metadata from both Prism Central and Keycloak
 
 ---
 
+###
+
+---
+
 ### 4.3 Create Groups
 Create groups to differentiate user permissions:
 - `pc-admin-keycloak`
