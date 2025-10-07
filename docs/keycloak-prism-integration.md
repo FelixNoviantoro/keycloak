@@ -65,7 +65,22 @@ https://10.2.0.36:9440/api/iam/authn/callback
 
 ---
 
-### 4.4 Create Groups
+## 4.4 Configure SAML Capabilities
+1. Go to **Clients → [your SAML client] → Settings → SAML Capabilities**.
+2. Configure the following:
+- **Name ID Format:** `email` (or `username` if Prism Central is set to use `username`)
+- **Force Name ID Format:** `On`
+- **Force POST Binding:** `On`
+- **Force Artifact Binding:** `Off`
+- **Include AuthnStatement:** `On`
+- **Include OneTimeUse Condition:** `Off`
+- **Optimize REDIRECT Signing Key Lookup:** `Off`
+- **Front channel logout:** `Off`
+3. Click **Save**.
+
+---
+
+### 4.5 Create Groups
 Create groups to differentiate user permissions:
 - `pc-admin-keycloak`
 - `pc-operator-keycloak`
@@ -74,7 +89,7 @@ These groups will later be mapped to Prism Central Authorization Policies.
 
 ---
 
-### 4.5 Create Users and Assign Groups
+### 4.6 Create Users and Assign Groups
 1. Go to **Users → Add User** and create the test or production users.
 2. Under the user’s **Groups** tab, add them to the appropriate group(s):
    - `pc-admin-keycloak`
@@ -82,7 +97,7 @@ These groups will later be mapped to Prism Central Authorization Policies.
 
 ---
 
-### 4.6 Add Group Mapper
+### 4.7 Add Group Mapper
 To pass group membership to Prism Central via SAML:
 
 1. Go to **Clients → [your SAML client]**
